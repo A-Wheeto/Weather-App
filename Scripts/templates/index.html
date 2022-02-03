@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} {{ weather_data[0].name }} {% endblock %}
+
+{% block content %}
+<br>
+<p class="city">{{ weather_data[0].name }}</p>
+<p class="date">{{ weather_data[0].day_of_week() }}, {{ weather_data[0].format_date() }}</p>
+<br>
+<p>Current Temp:<span class="temp"> {{ weather_data[0].temp }}</span>°C</p>
+<p>Feels Like:<span class="temp"> {{ weather_data[0].fl_temp }}</span>°C</p>
+<p>Min Temp:<span class="temp"> {{ weather_data[0].min_temp }}</span>°C</p>
+<p>Max Temp:<span class="temp"> {{ weather_data[0].max_temp }}</span>°C</p>
+<br>
+<img src="{{ weather_data[0].icon_url() }}"></p>
+<p>{{ weather_data[0].main }}</p>
+
+{% endblock %}
